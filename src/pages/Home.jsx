@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Contact from "../components/Contact";
 import Featured from "../components/Featured";
-import FoodTypes from "../components/FoodTypes";
 import Landing from "../components/Landing";
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
     <div>
       <Landing />
       <Featured type="savoury" setShowFoodTypes={setShowFoodTypes} />
-      {showFoodTypes && <FoodTypes />}
       <Featured type="sweet" setShowFoodTypes={setShowFoodTypes} />
       <Contact />
     </div>
