@@ -21,7 +21,7 @@ export default function Nav({ numberOfItems }) {
             </Link>
           </li>
           <li className="nav__list">
-            <Link to="/foods" className="nav__link">
+            <Link to="/menu" className="nav__link">
               Menu
             </Link>
           </li>

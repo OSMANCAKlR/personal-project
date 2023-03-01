@@ -12,35 +12,35 @@ import borek_sigara from './assets/sigara_borek.webp'
 export const categories = [
     {
         id: 1,
-        title: "börek",
+        title: "Börek",
         image: borek,
         type: "savoury",
         category: "borek"
     },
     {
         id: 2,
-        title: "poğça",
+        title: "Poğça",
         image: pogca,
         type: "savoury",
         category: "pogca",
     },
     {
         id: 3,
-        title: "dolma",
+        title: "Dolma",
         image: dolma,
         type: "savoury",
         category: "dolma",
     },
     {
         id: 4,
-        title: "sides",
+        title: "Sides",
         image: sides,
         type: "savoury",
         category: "sides",
     },
     {
         id: 5,
-        title: "tatli",
+        title: "Tatli",
         image: tatli,
         type: "sweet",
         category: "tatli",
@@ -49,7 +49,7 @@ export const categories = [
     },
     {
         id: 6,
-        title: "pudding",
+        title: "Pudding",
         image: pudding,
         type: "sweet",
         category: "pudding",
@@ -57,7 +57,7 @@ export const categories = [
     },
     {
         id: 7,
-        title: "cake",
+        title: "Cake",
         image: cake,
         type: "sweet",
         category: "cake",
@@ -65,7 +65,7 @@ export const categories = [
     },
     {
         id: 8,
-        title: "kurabiye",
+        title: "Kurabiye",
         image: kurabiye,
         type: "sweet",
         category: "kurabiye",
@@ -77,7 +77,7 @@ export const categories = [
 export const foods = [
         {
             id: 9,
-            title: "kiymali börek",
+            title: "Kiymali börek",
             image: borek_dunno,
             type:"savoury",
             price: 20,
@@ -85,7 +85,7 @@ export const foods = [
         },
         {
             id: 10,
-            title: "sigara börek",
+            title: "Sigara börek",
             image: borek_sigara,
             type: "savoury",
             price: 30,
@@ -93,7 +93,7 @@ export const foods = [
         },
         {
             id: 11,
-            title: "peynirli börek",
+            title: "Peynirli börek",
             image: borek,
             type: "savoury",
             price: 10,
@@ -101,7 +101,23 @@ export const foods = [
         },
         {
             id: 12,
-            title: "pogca bok",
+            title: "Test börek",
+            image: borek,
+            type: "savoury",
+            price: 10,
+            category: "borek",
+        },
+        {
+            id: 13,
+            title: "Bok börek",
+            image: borek,
+            type: "savoury",
+            price: 10,
+            category: "borek",
+        },
+        {
+            id: 14,
+            title: "Pogca bok",
             image: borek,
             type: "savoury",
             price: 10,

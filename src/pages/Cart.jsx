@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Cart({ cart, changeQuantity, removeItem }) {
   const total = () => {
@@ -12,29 +13,63 @@ export default function Cart({ cart, changeQuantity, removeItem }) {
   console.log(cart);
 
   return (
-    <div>
-      Cart
-      <div className="cart__body">
-        {cart.map((food) => {
-          return (
-            <div className="food__wrapper">
-              <img src={food.image} />
-              {food.title}
-              <button onClick={() => removeItem(food)}>Delete lad</button>
-              <input
-                type="number"
-                value={food.quantity}
-                onChange={(event) => changeQuantity(food, event.target.value)}
-              />
-              ${food.price.toFixed(2)}${food.price.toFixed(2) * food.quantity}
-            </div>
-          );
-        })}
-        <div className="total">
-          <span>subtotal</span>
-          <span>${(total() * 0.9).toFixed(2)}</span>
+    <section id="cart">
+      <div className="row">
+        <h1>Cart</h1>
+        <div className="cart__header">
+          <p className="cart__header--text">Food</p>
+          <p className="cart__header--text">Quantity</p>
+          <p className="cart__header--text">Price</p>
         </div>
+        <div className="cart__body">
+          {cart.map((food) => {
+            return (
+              <div className="food__container">
+                <div className="food__wrapper--cart">
+                <img src={food.image} />
+                  <div className="food__information">
+                <span className="cart__title">{food.title} </span>
+                <span>${food.price.toFixed(2)}</span>
+                <button className="delete__button" onClick={() => removeItem(food)}>Remove lad</button>
+                  </div>
+                </div>
+
+                <div className="cart__input">
+                <input className="cart_input"
+                  type="number"
+                  min={0}
+                  max={99}
+                  value={food.quantity}
+                  onChange={(event) => changeQuantity(food, event.target.value)}
+                  />
+                 <span className="cart__price"> ${food.price.toFixed(2) * food.quantity}</span>
+                </div>
+              </div>
+            );
+          })}
+        {
+          cart.length === 0 && 
+          <div className="cart__empty">
+            <h2>You don't have any items in your cart cuh</h2>
+            <Link to="/menu">
+              <button className="food__button">Browse Menu</button>
+            </Link>
+          </div>
+        }
+            <div className="total">
+              <div className="price__row">
+              <span>Total </span>
+              <span>${(total()).toFixed(2)}</span>
+              </div>
+              <button
+                className="btn btn__checkout no-cursor"
+                onClick={() => alert("Sorry, this unavailable at the moment :(")}
+              >
+                Proceed to checkout
+              </button>
+            </div>
+          </div>
       </div>
-    </div>
+    </section>
   );
 }

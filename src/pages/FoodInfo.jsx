@@ -24,13 +24,13 @@ export default function FoodInfo({ addToCart, cart, foods }) {
           <div className="foods__wrapper">
             {foods
               .filter((food) => food.category === location)
-              .slice(0, 4)
               .map((food) => (
                 <div className="food__container" key={food.id}>
                   <Food food={food} key={food.id} />
+                  ${food.price.toFixed(2)}
                   {cart.find((item) => item.id === food.id) ? (
                     <Link to={`/cart`} className="book__Link">
-                      <button className="landing__button">Checkout</button>
+                      <button className="food__button--checkout">Checkout</button>
                     </Link>
                   ) : (
                     <button className="food__button" onClick={() => addFoodToCart(food)}>
