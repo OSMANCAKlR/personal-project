@@ -8,6 +8,12 @@ import cake from './assets/cake.webp'
 import kurabiye from './assets/kurabiye.webp'
 import borek_dunno from './assets/dunno_borek.webp'
 import borek_sigara from './assets/sigara_borek.webp'
+import patatesli_pogca from './assets/patatesli_pogca.png'
+import peynirli_pogca from './assets/peynirli_pogca.jpeg'
+import lahana_dolma from './assets/lahana_dolma.png'
+import yaprak_dolma from './assets/yaprak_dolma.webp'
+import savoury_cookies from './assets/savoury_cookies.png'
+import mixed_savoury_cookies from './assets/mixed_savoury_cookies.png'
 
 export const categories = [
     {
@@ -19,7 +25,7 @@ export const categories = [
     },
     {
         id: 2,
-        title: "Poğça",
+        title: "Poğaça",
         image: pogca,
         type: "savoury",
         category: "pogca",
@@ -80,7 +86,7 @@ export const foods = [
             title: "Kiymali börek",
             image: borek_dunno,
             type:"savoury",
-            price: 20,
+            price: 6,
             category: "borek",
         },
         {
@@ -88,7 +94,7 @@ export const foods = [
             title: "Sigara börek",
             image: borek_sigara,
             type: "savoury",
-            price: 30,
+            price: 5,
             category: "borek",
         },
         {
@@ -96,32 +102,56 @@ export const foods = [
             title: "Peynirli börek",
             image: borek,
             type: "savoury",
-            price: 10,
+            price: 5,
             category: "borek",
         },
         {
             id: 12,
-            title: "Test börek",
-            image: borek,
-            type: "savoury",
-            price: 10,
-            category: "borek",
+            title: "Kiymali börek",
+            image: patatesli_pogca,
+            type:"savoury",
+            price: 6,
+            category: "pogca",
         },
         {
             id: 13,
-            title: "Bok börek",
-            image: borek,
+            title: "Patatesli Pogaca",
+            image: peynirli_pogca,
             type: "savoury",
-            price: 10,
-            category: "borek",
+            price: 5,
+            category: "pogca",
         },
         {
             id: 14,
-            title: "Pogca bok",
-            image: borek,
+            title: "Lahana Dolma",
+            image: lahana_dolma,
+            type:"savoury",
+            price: 6,
+            category: "dolma",
+        },
+        {
+            id: 15,
+            title: "Yaprak Dolma",
+            image: yaprak_dolma,
+            type: "savoury",
+            price: 6.50,
+            category: "dolma",
+        },
+        {
+            id: 16,
+            title: "Savoury Cookies",
+            image: savoury_cookies,
+            type:"savoury",
+            price: 9.50,
+            category: "sides",
+        },
+        {
+            id: 17,
+            title: "Mixed Savoury Cookies",
+            image: mixed_savoury_cookies,
             type: "savoury",
             price: 10,
-            category: "pogca",
+            category: "sides",
         },
-        
+       
 ]

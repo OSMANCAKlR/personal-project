@@ -11,9 +11,11 @@ export default function Nav({ numberOfItems }) {
   return (
     <nav>
       <div className="nav__container">
+        <div className="logo__container">
         <Link to="/">
           <img src={Logo} alt="" className="logo" />
         </Link>
+        </div>
         <ul className="nav__links">
           <li className="nav__list">
             <Link to="/" className="nav__link">

@@ -50,7 +50,7 @@ function App() {
       <Nav numberOfItems={numberOfItems()}/>
       <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/menu" element={<Menu foods={foods} />} />
+      <Route path="/menu" element={<Menu foods={foods} cart={cart} addToCart={addToCart} />} />
       <Route path='/:id' element={<FoodInfo foods={foods} addToCart={addToCart} cart={cart} />} />
       <Route path="/cart" element={<Cart foods={foods} cart={cart} changeQuantity={changeQuantity} removeItem={removeItem}/>} />
       </Routes>

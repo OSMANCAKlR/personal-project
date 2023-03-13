@@ -1,8 +1,22 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
 import Food from "../components/ui/Food";
 import { foods } from "../data";
 
-export default function Menu() {
+export default function Menu({cart , addToCart}) {
+
+  const { id } = useParams();
+
+  const food = foods.find((food) => +food.id === +id);
+
+  function addFoodToCart(food) {
+    const foodExists = cart.find((item) => item.id === food.id);
+    if (foodExists) {
+      return;
+    }
+    addToCart(food);
+  }
+
   return (
     <section id="menu">
       <div className="container">
@@ -18,11 +32,22 @@ export default function Menu() {
             </select>
           </div>
             <div className="foods">
-              {foods
-                .filter((food) => food)
-                .map((food) => (
+            {foods
+              .map((food) => (
+                <div className="food__container" key={food.id}>
                   <Food food={food} key={food.id} />
-                ))}
+                  ${food.price.toFixed(2)}
+                  {cart.find((item) => item.id === food.id) ? (
+                    <Link to={`/cart`} className="book__Link">
+                      <button className="food__button--checkout">Checkout</button>
+                    </Link>
+                  ) : (
+                    <button className="food__button" onClick={() => addFoodToCart(food)}>
+                      Add to cart
+                    </button>
+                  )}
+                </div>
+              ))}
           </div>
         </div>
       </div>

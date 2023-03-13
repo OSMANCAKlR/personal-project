@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -10,12 +11,14 @@ export default function Cart({ cart, changeQuantity, removeItem }) {
     return price;
   };
 
-  console.log(cart);
 
   return (
     <section id="cart">
       <div className="row">
-        <h1>Cart</h1>
+        <Link to="/">
+      <FontAwesomeIcon className="cart__arrow" icon="fa-solid fa-left-long" />
+        </Link>
+        <h1 >Cart</h1>
         <div className="cart__header">
           <p className="cart__header--text">Food</p>
           <p className="cart__header--text">Quantity</p>
@@ -30,7 +33,7 @@ export default function Cart({ cart, changeQuantity, removeItem }) {
                   <div className="food__information">
                 <span className="cart__title">{food.title} </span>
                 <span>${food.price.toFixed(2)}</span>
-                <button className="delete__button" onClick={() => removeItem(food)}>Remove lad</button>
+                <button className="delete__button" onClick={() => removeItem(food)}>Remove</button>
                   </div>
                 </div>
 
@@ -42,7 +45,7 @@ export default function Cart({ cart, changeQuantity, removeItem }) {
                   value={food.quantity}
                   onChange={(event) => changeQuantity(food, event.target.value)}
                   />
-                 <span className="cart__price"> ${food.price.toFixed(2) * food.quantity}</span>
+                 <span className="cart__price"> ${(food.price * food.quantity).toFixed(2)}</span>
                 </div>
               </div>
             );
@@ -50,7 +53,7 @@ export default function Cart({ cart, changeQuantity, removeItem }) {
         {
           cart.length === 0 && 
           <div className="cart__empty">
-            <h2>You don't have any items in your cart cuh</h2>
+            <h2 className="empty__cart">You don't have any items in your cart</h2>
             <Link to="/menu">
               <button className="food__button">Browse Menu</button>
             </Link>
@@ -63,7 +66,7 @@ export default function Cart({ cart, changeQuantity, removeItem }) {
               </div>
               <button
                 className="btn btn__checkout no-cursor"
-                onClick={() => alert("Sorry, this unavailable at the moment :(")}
+                onClick={() => alert("Sorry, this unavailable at the moment")}
               >
                 Proceed to checkout
               </button>

@@ -4,7 +4,6 @@ import Food from "../components/ui/Food";
 
 export default function FoodInfo({ addToCart, cart, foods }) {
   const location = useLocation().pathname.slice(1);
-  console.log(location);
 
   const { id } = useParams();
   const food = foods.find((food) => +food.id === +id);
@@ -16,6 +15,9 @@ export default function FoodInfo({ addToCart, cart, foods }) {
     }
     addToCart(food);
   }
+
+  const foodInfo = foods.filter((food) => food.category === location)
+  console.log(foodInfo.length)
 
   return (
     <section id="food__info">
@@ -39,6 +41,15 @@ export default function FoodInfo({ addToCart, cart, foods }) {
                   )}
                 </div>
               ))}
+              {
+          foodInfo.length === 0 && 
+          <div className="cart__empty">
+            <h2 className="empty__cart">Sorry this item is not available yet. Please click the button to go back to homepage</h2>
+            <Link to="/">
+              <button className="food__button">Go Back</button>
+            </Link>
+          </div>
+        }
           </div>
         </div>
       </div>

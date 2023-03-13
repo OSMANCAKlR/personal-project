@@ -182,8 +182,7 @@ main {
 
 
 #menu {
-    margin-top: 144px;
-    margin-bottom: 144px;
+   
 }
 
 .menu__wrapper-title {
@@ -251,7 +250,6 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: calc(100% / 4);
   }
 
   .food__title {
@@ -286,7 +284,7 @@ main {
 .food__button--checkout {
   height: 34px;
   width: 149px;
-  background-color: beige;
+  background-color: #D4E0EA;
   border: 1px black solid;
   margin-top: 4px;
   box-shadow: 3px 3px 0px 0.5px rgba(0,0,0,0.75);
@@ -331,8 +329,19 @@ main {
 }
 
 
+#menu .foods {
+  justify-content: center;
+  margin-top: 44px;
+  align-items: center;
+}
 
+#menu .food__container {
+  margin: 24px 34px;
+}
 
+#menu .food__title {
+  
+}
 
 
 .food__img {
@@ -486,8 +495,13 @@ input[type="text"], input[type="number"], input[type="email"], input[type="date"
 
 .foods {
   display: flex;
+  flex-wrap: wrap;
+
 }
 
+.food__title {
+  max-width: 404px;
+}
 
 
 
@@ -666,4 +680,49 @@ input[type="text"], input[type="number"], input[type="email"], input[type="date"
 
 .no-cursor {
   cursor: not-allowed;
+}
+
+
+.empty__cart {
+  margin-bottom: 24px;
+}
+
+.cart__empty {
+  margin-top: 24px
+}
+
+.cart__arrow {
+  font-size: 34px;
+  margin-bottom: 12px;
+  color: black;
+}
+
+
+
+
+/* MOBILE */
+
+@media (max-width: 480px)  {
+
+  nav {
+    padding: 0px;
+  }
+  
+.nav__links {
+  display: none;
+}
+
+.logo__container {
+  margin-left: 114px;
+}
+
+.landing__title {
+  font-size: 34px;
+  margin-left: 14px;
+}
+
+.landing__wrapper {
+  flex-direction: column;
+}
+
 }
